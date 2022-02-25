@@ -23,6 +23,11 @@ export const HeaderInnerBox = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    &.column3 {
+        justify-content: flex-end;
+        padding-right: 56px;
+    }
 `;
 
 export const ButtonReset = styled.button`

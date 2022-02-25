@@ -27,7 +27,7 @@ export function Home() {
           <Title>OVERTIME</Title>
         </HeaderInnerBox>
 
-        <HeaderInnerBox>
+        <HeaderInnerBox className='column3'>
           <ButtonReset>
             <SvgResetBox src={SvgReset} />
           </ButtonReset>
