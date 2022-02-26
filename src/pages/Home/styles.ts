@@ -1,9 +1,32 @@
 import styled from 'styled-components';
 import { theme } from '../../theme';
 
+type ModalProps = {
+    visible: boolean;
+};
+
 export const Container = styled.div`
     width: 100%;
     padding: 135px 101px 135px 101px;
+`;
+
+export const Modal = styled.div<ModalProps>`
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 19, 19, 0.76);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    position: ${({ visible }) => visible ? 'fixed' : 'absolute'};
+    display: ${({ visible }) => visible ? 'flex' : 'none'};
+    animation: animate;
+    animation-duration: 800ms;
+
+    @keyframes animate {
+        from { opacity: 1; }
+        from { opacity: 0; }
+    }
 `;
 
 export const Title = styled.h1`

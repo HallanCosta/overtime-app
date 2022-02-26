@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import SvgReset from '../../assets/buttonReset.svg';
 import SvgAdd from '../../assets/add.svg';
 
 import { 
   Container, 
+  Modal,
   Title, 
   Header,
   HeaderInnerBox,
@@ -18,8 +19,22 @@ import {
 } from './styles';
 
 export function Home() {
+  const [modal, setModal] = useState(false);
+
+  function handleOpenModal() {
+    setModal(true);
+  }
+
+  function handleCloseModal() {
+    setModal(false);
+  }
+
   return (
     <Container>
+      <Modal onClick={handleCloseModal} visible={modal}>
+        Modal
+      </Modal>
+
       <Header>
         <HeaderInnerBox></HeaderInnerBox>
 
@@ -57,7 +72,7 @@ export function Home() {
         </Card>
       </Cards>
 
-      <ButtonAdd>
+      <ButtonAdd onClick={handleOpenModal}>
         <SvgAddBox src={SvgAdd} />
       </ButtonAdd>
     </Container>
